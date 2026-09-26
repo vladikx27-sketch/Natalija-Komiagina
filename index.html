@@ -252,7 +252,8 @@ footer{padding:24px 0 40px;background:var(--paper)}
 }
 @media (max-width:600px){
   body{font-size:16px}
-  .bar{gap:10px;height:62px}
+  .bar{gap:10px;height:64px}
+  header.top{padding-top:8px}
   .brand span{display:none}
   .bar .btn{display:none}
   .burger{display:block}
@@ -342,8 +343,10 @@ footer{padding:24px 0 40px;background:var(--paper)}
 html:not(.js) .marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
 
 @media (max-width:600px){
-  .hero{min-height:0!important;height:auto!important;padding:28px 20px 44px!important;justify-content:flex-start}
-  .hero .mark{width:min(78vw,320px)!important}
+  /* first screen on phones = header + logo + tagline only; the photo starts after scrolling */
+  .hero{height:calc(100vh - 72px)!important;height:calc(100svh - 72px - env(safe-area-inset-top,0px))!important;min-height:460px!important;padding:0 20px 24px!important;justify-content:center;gap:22px!important}
+  .hero .mark{width:min(82vw,52svh,360px)!important;width:min(82vw,360px)}
+  .hero .tag{font-size:22px}
   .langs label{min-width:36px;height:30px}
 }
 
